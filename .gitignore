@@ -1,0 +1,31 @@
+# Node.js
+node_modules/
+dist/
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# OS Files
+.DS_Store
+Thumbs.db
+
+# Environment Variables
+.env
+
+# Editor/IDE Files
+.vscode/
+.idea/
+
+# Frontend specific
+Spotify-wrapped-frontend/node_modules/
+Spotify-wrapped-frontend/dist/
+Spotify-wrapped-frontend/.env
+
+# Backend specific
+Spotify-wrapped-backend/node_modules/
+Spotify-wrapped-backend/dist/
+Spotify-wrapped-backend/.env
