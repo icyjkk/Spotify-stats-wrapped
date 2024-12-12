@@ -9,7 +9,7 @@ function AuthHandler() {
 
     useEffect(() => {
         const authenticate = async () => {
-            const storedToken = sessionStorage.getItem("accesToken");
+            const storedToken = sessionStorage.getItem("accessToken");
             if (storedToken) {
                 console.log("Token recuperado de sessionStorage:", storedToken);
                 setAccessToken(true);
@@ -24,7 +24,7 @@ function AuthHandler() {
                 try {
                     const token = await getAccessToken(code, codeVerifier);
                     console.log(token.access_token);
-                    sessionStorage.setItem("accesToken", token.access_token);
+                    sessionStorage.setItem("accessToken", token.access_token);
                     setAccessToken(true);
                 } catch (error) {
                     console.error("Error al intercambiar el código por un token:", error);
