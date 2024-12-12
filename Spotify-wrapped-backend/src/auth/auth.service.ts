@@ -12,7 +12,7 @@ export class AuthService {
             client_id: this.clientId,
             response_type: 'code',
             redirect_uri: this.redirectUri,
-            scope: 'user-top-read user-read-private',
+            scope: 'user-read-private user-read-email',
         });
 
 
@@ -22,7 +22,7 @@ export class AuthService {
     async exchangeCodeForToken(code, codeVerifier) {
 
         console.log(code)
-        console.log("verifier: "+codeVerifier)
+        console.log("verifier: ", codeVerifier)
 
         const params = new URLSearchParams({
             grant_type: 'authorization_code',
