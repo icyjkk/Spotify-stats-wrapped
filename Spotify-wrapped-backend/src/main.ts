@@ -13,7 +13,7 @@ async function bootstrap() {
   app.enableCors({
     origin: '*', // Aqui en un futuro se pondría la URL del frontend, esto es para que solo nuestro frontend pueda hacerle peticiones a nuestro backend.
     methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
-    allowedHeaders: 'Content-Type, Accept',
+    allowedHeaders: 'Content-Type, Accept, Authorization ',
     credentials: true, // Si la aplicación necesita enviar cookies u otros datos de autenticación.
   })
   app.enableCors();
