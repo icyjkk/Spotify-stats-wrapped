@@ -1,0 +1,19 @@
+.user-container {
+    display: flex;
+    flex-direction: column; /* Cambia a columna para que los hijos se apilen verticalmente */
+    justify-content: flex-start; /* Esto asegura que los elementos estén al inicio */
+    align-items: flex-start; /* Asegura que los elementos se alineen a la izquierda */
+    position: absolute;
+    top: 0;
+    width: 100%;
+    background-color: #141024;
+    z-index: 1000;
+    color: aliceblue;
+}
+
+.title {
+    margin-bottom: 100px;
+    margin-top: 100px;
+    margin-left: 100px;
+    background-color: rgb(23, 206, 50);
+}
