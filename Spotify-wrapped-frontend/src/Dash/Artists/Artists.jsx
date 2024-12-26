@@ -5,11 +5,13 @@ function Artists() {
     const [artistsData, setArtistsData] = useState(null); // Estado para almacenar los datos del perfil
     const [timeRange, setTimeRange] = useState("short_term"); // Estado para el rango de tiempo
 
+    const backendUrl = import.meta.env.VITE_BACKEND_URL 
+
     useEffect(() => {
         // Función para obtener el perfil del usuario
         const fetchUserProfile = async () => {
             try {
-                const response = await fetch(`http://localhost:3001/user/artists?time_range=${timeRange}`, {
+                const response = await fetch(`${backendUrl}/user/artists?time_range=${timeRange}`, {
                     method: "GET",
                     headers: {
                         Authorization: `Bearer ${sessionStorage.getItem("accessToken")}`, // Obtener el token del localStorage
@@ -48,14 +50,12 @@ function Artists() {
             </div>
             <div className="artists-container">
                 {artistsData && artistsData.items && artistsData.items.slice(0, 10).map((artist, index) => (
-                    <div className="">
+                    <div key={index}>
                         <iframe
-                            key={index} // Clave única para cada iframe
                             src={`https://open.spotify.com/embed/artist/${artist.id}?utm_source=generator`}
                             width="350"
                             height="170"
                             frameBorder="0"
-                            allowFullScreen
                             allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
                             loading="lazy"
                         />

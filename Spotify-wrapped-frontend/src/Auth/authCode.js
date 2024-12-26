@@ -1,5 +1,7 @@
+const backendUrl = import.meta.env.VITE_BACKEND_URL 
+
 export async function getAccessToken(code,codeVerifier) {
-    const response = await fetch('http://localhost:3001/auth/token', {
+    const response = await fetch(`${backendUrl}/auth/token`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ code, codeVerifier }),
@@ -10,12 +12,13 @@ export async function getAccessToken(code,codeVerifier) {
 }
 
 export async function redirectToSpotify() {
+    console.log(backendUrl)
     const codeVerifier = generateCodeVerifier(128);
     sessionStorage.setItem('codeVerifier', codeVerifier); // Guarda el codeVerifier para usarlo después
 
     const codeChallenge = await generateCodeChallenge(codeVerifier);
 
-    const response = await fetch('http://localhost:3001/auth/url');
+    const response = await fetch(`${backendUrl}/auth/url`);
     const { url } = await response.json();
 
     window.location.href = `${url}&code_challenge=${codeChallenge}&code_challenge_method=S256`;

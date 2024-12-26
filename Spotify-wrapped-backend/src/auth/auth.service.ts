@@ -3,9 +3,9 @@ import { Injectable } from '@nestjs/common';
 @Injectable()
 export class AuthService {
 
-    private clientId = process.env.CLIENT_ID;
-    private clientSecret = process.env.CLIENT_SECRET;
-    private redirectUri = process.env.REDIRECT_URI;
+    private clientId = process.env.SPOTIFY_CLIENT_ID;
+    private clientSecret = process.env.SPOTIFY_CLIENT_SECRET;
+    private redirectUri = process.env.FRONTEND_URI;
 
     generateAuthUrl(){
         const params = new URLSearchParams({
@@ -15,7 +15,7 @@ export class AuthService {
             scope: 'user-read-private user-read-email user-top-read',
         });
 
-
+        
         return { url: `https://accounts.spotify.com/authorize?${params.toString()}` };
     }
 
