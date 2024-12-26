@@ -1,0 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+
+.title-track-container{
+    display: flex;
+    flex-direction: column; /* Coloca los elementos en columna */
+    margin-left: 2.5%;
+}
+    
+.track-container {
+    max-height: 500px; /* Establece una altura máxima */
+    overflow-y: auto; /* Activa el scroll vertical */
+    scrollbar-color: rgba(255, 255, 255, 0) transparent; /* Scroll estilizado */
+}
+
+
+

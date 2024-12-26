@@ -1,4 +1,4 @@
-import { Controller, Get, Req,UnauthorizedException  } from '@nestjs/common';
+import { Controller, Get, Query   } from '@nestjs/common';
 import { UserService } from './user.service'
 import { ExtractToken } from '../decorators/decorators.decorator';
 
@@ -13,8 +13,17 @@ export class UserController {
     // Obtener el perfil
     @Get('profile')
     async getProfile(@ExtractToken() token: string) {
-        console.log('Token:', token);
         return await this.userService.getProfile(token); // Ahora pasas el token directamente
+    }
+
+    @Get('artists')
+    async getTopArtists( @Query('time_range') timeRange: string, @ExtractToken() token: string) {
+        return await this.userService.getTopArtists(token,timeRange); // Ahora pasas el token directamente
+    }
+
+    @Get('tracks')
+    async getTopTracks( @Query('time_range') timeRange: string, @ExtractToken() token: string) {
+        return await this.userService.getTopTracks(token,timeRange); // Ahora pasas el token directamente
     }
 
     //test connection

@@ -1,12 +1,14 @@
 import { useState, useEffect } from "react";
 import "./Dash.css"; // Importa el archivo de estilos
-import User from "./User/User";
+import Artists from "./Artists/Artists";
+import Tracks from "./Tracks/tracks";
 
 function Dash() {
 
     return (
         <div className="dashboard-container">
-                <User></User>   
+            <Artists />
+            <Tracks />
         </div>
     );
 }

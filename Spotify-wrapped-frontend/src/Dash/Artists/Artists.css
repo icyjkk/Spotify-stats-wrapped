@@ -1,0 +1,38 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+
+.title-artist-container{
+    display: flex;
+    flex-direction: column; /* Coloca los elementos en columna */
+    margin-right: 2.5%;
+}
+    
+.artists-container {
+    max-height: 500px; /* Establece una altura máxima */
+    overflow-y: auto; /* Activa el scroll vertical */
+    scrollbar-color: rgba(255, 255, 255, 0) transparent; /* Scroll estilizado */
+}
+
+.title-container {
+    display: flex; /* Usa flexbox para alinear elementos */
+    align-items: center; /* Alinea verticalmente */
+    justify-content: space-between; /* Coloca el título a la izquierda y el desplegable a la derecha */
+    color: white;
+    margin-bottom: 3%;
+    font-family: 'Montserrat', sans-serif; /* Aplica la nueva fuente */
+}
+
+.time-range-select {
+    padding: 5px;
+    font-size: 12px;
+    border-radius: 4px;
+    background-color: #000000;
+    color: white;
+    font-family: 'Montserrat', sans-serif; /* Aplica la nueva fuente */
+    margin-right: 4.4%;
+}
+
+.time-range-select:focus {
+    outline: none;
+    border-color: #4CAF50;
+}
+

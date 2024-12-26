@@ -12,7 +12,7 @@ export class AuthService {
             client_id: this.clientId,
             response_type: 'code',
             redirect_uri: this.redirectUri,
-            scope: 'user-read-private user-read-email',
+            scope: 'user-read-private user-read-email user-top-read',
         });
 
 
