@@ -1,13 +1,13 @@
-import { ValidationPipe } from '@nestjs/common'
-import { NestFactory } from '@nestjs/core'
-import { AppModule } from './app.module'
+import { ValidationPipe } from '@nestjs/common';
+import { NestFactory } from '@nestjs/core';
+import { AppModule } from './app.module';
 import * as dotenv from 'dotenv'; // Import dotenv
 
 dotenv.config(); // Load variables from .env file
 
 async function bootstrap() {
-  const app = await NestFactory.create(AppModule)
-  app.useGlobalPipes(new ValidationPipe()) // Para poder usar las validaciones.
+  const app = await NestFactory.create(AppModule);
+  app.useGlobalPipes(new ValidationPipe()); // Para poder usar las validaciones.
 
   // Habilitar CORS para que nuestro frontend pueda hacer peticiones a nuestro backend.
   app.enableCors({
@@ -15,10 +15,9 @@ async function bootstrap() {
     methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
     allowedHeaders: 'Content-Type, Accept, Authorization ',
     credentials: true, // Si la aplicación necesita enviar cookies u otros datos de autenticación.
-  })
-  app.enableCors();
-  
-  await app.listen(process.env.PORT || 3000)
+  });
+
+  await app.listen(process.env.PORT || 3000);
 }
 
-bootstrap()
+bootstrap();
