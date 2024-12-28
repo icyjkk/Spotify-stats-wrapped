@@ -6,6 +6,7 @@ export class UserService {
   constructor(private readonly spotifyApiService: SpotifyApiService) {}
 
   test() {
+    console.log('test');
     return 'This is a test service!';
   }
 
