@@ -31,7 +31,7 @@ async function bootstrap() {
 
   // Configuración de CORS
   app.enableCors({
-    origin: process.env.FRONTEND_URI,
+    origin: '*', // Aqui en un futuro se pondría la URL del frontend, esto es para que solo nuestro frontend pueda hacerle peticiones a nuestro backend.
     methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
     allowedHeaders: 'Content-Type, Accept, Authorization',
     credentials: true,
