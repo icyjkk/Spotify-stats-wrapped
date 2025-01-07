@@ -35,7 +35,7 @@ function Artists() {
     }, [timeRange]); // Solo se ejecuta una vez al montar el componente
 
     return (
-        <div className="title-artist-container">
+        <div className="title-artist-container mt-10">
             <div className="title-container">
                 <p className="title-text">TOP 10 ARTISTS</p>
                 <select
@@ -48,13 +48,12 @@ function Artists() {
                     <option value="long_term">Lifetime</option>
                 </select>
             </div>
-            <div className="artists-container">
+            <div className="artists-container ">
                 {artistsData && artistsData.items && artistsData.items.slice(0, 10).map((artist, index) => (
-                    <div key={index}>
+                    <div key={index} className="-mb-10 md:mb-0">
                         <iframe
                             src={`https://open.spotify.com/embed/artist/${artist.id}?utm_source=generator`}
-                            width="350"
-                            height="170"
+                            className="w-[280px] h-[150px] md:w-[350px] md:h-[170px]"
                             frameBorder="0"
                             allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
                             loading="lazy"

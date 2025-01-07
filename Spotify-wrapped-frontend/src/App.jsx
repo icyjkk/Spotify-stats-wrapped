@@ -1,6 +1,6 @@
 import AuthHandler from "./Auth/AuthHandler";
-import Dash from "./Dash/Dash";
 import { Route, Routes } from 'react-router-dom'
+import Dash from "./Dash/Dash";
 
 function App() {
   return (

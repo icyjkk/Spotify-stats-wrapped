@@ -35,7 +35,7 @@ function Track() {
     }, [timeRange]); // Solo se ejecuta una vez al montar el componente
 
     return (
-        <div className="title-track-container">
+        <div className="title-track-container mt-10 mr-4">
             <div className="title-container">
                 <p className="title-text">TOP 10 TRACKS</p>
                 <select
@@ -50,11 +50,10 @@ function Track() {
             </div>
             <div className="track-container">
                 {tracksData && tracksData.items && tracksData.items.slice(0, 10).map((track, index) => (
-                    <div key={index}>
+                    <div key={index} className="-mb-10 md:mb-0">
                         <iframe
                             src={`https://open.spotify.com/embed/track/${track.id}?utm_source=generator`}
-                            width="350"
-                            height="170"
+                            className="w-[280px] h-[150px] md:w-[350px] md:h-[170px]"
                             frameBorder="0"
                             allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
                             loading="lazy"

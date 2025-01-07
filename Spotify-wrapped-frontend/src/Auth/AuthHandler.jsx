@@ -1,7 +1,6 @@
 import { useState, useEffect } from "react";
 import { redirectToSpotify, getAccessToken } from "./authCode";
 import { useNavigate } from "react-router-dom";
-import "./AuthHandler.css"; // Importa el archivo de estilos
 
 function AuthHandler() {
     const [accessToken, setAccessToken] = useState(false); // Estado para almacenar el token de acceso
@@ -43,13 +42,13 @@ function AuthHandler() {
     }, [accessToken, navigate]);
 
     return (
-        <div className="login-container">
+        <div className="flex justify-center items-center h-screen bg-blacks">
             {!accessToken && (
-                <button onClick={redirectToSpotify} className="spotify-button">
+                <button onClick={redirectToSpotify} className="flex items-center justify-center bg-black text-white p-2 rounded-3xl font-medium text-lg cursor-pointer">
                     <img
                         src="https://upload.wikimedia.org/wikipedia/commons/8/84/Spotify_icon.svg"
                         alt="Spotify logo"
-                        className="spotify-logo"
+                        className="w-8 h-8 mr-2"
                     />
                     Continue with Spotify
                 </button>

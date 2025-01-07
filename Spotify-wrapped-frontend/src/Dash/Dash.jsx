@@ -1,16 +1,16 @@
 import { useState, useEffect } from "react";
-import "./Dash.css"; // Importa el archivo de estilos
 import Artists from "./Artists/Artists";
 import Tracks from "./Tracks/Tracks";
-
 function Dash() {
 
+
     return (
-        <div className="dashboard-container">
+        <div className="flex flex-col md:flex-row md:justify-center justify-start items-center h-screen overflow-y-auto bg-black ">
             <Artists />
             <Tracks />
         </div>
     );
+
 }
 
 export default Dash;
